@@ -26,10 +26,12 @@ function Blog({ posts }) {
 
 		</main>
 
+
 		<footer className={styles.footer}>
 			Deploy on Vercel
 		</footer>
-    
+
+
 	</div>
 	)
 }
