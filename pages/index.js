@@ -1,35 +1,29 @@
 import Head from 'next/head'
-import styles from '../styles/Home.module.css'
+import Link from 'next/link'
+import Image from 'next/image'
 
-function Blog({ posts }) {
+function Home({ posts }) {
 	return (
-	<div className={styles.container}>
-
+	<div className="bg-white">
 		<Head>
             <title>Blog</title>
             <link rel="icon" href="/favicon.ico" />
         </Head>
 
 		<main>
-
-			<h1 className={styles.title}> BLOG </h1>
-
+			<h1 className="text-5xl text-center font-black p-10"> BLOG </h1>
 			{posts.map((post) => (
-
-				<div  className={styles.post}>
-					<h1 className={styles.h3}>{post.title}</h1>
-					<p  className={styles.para}>{post.body}</p>
+				<div  className="md:w-1/2 w-full m-auto p-5">
+					<h1 className="text-3xl mb-2 font-bold capitalize">{post.title}</h1>
+					<p  className="font-sans">{post.body}</p>
 				</div>
-			
 			))}
-
-
 		</main>
 
-		<footer className={styles.footer}>
+		<footer className="">
 			Deploy on Vercel
 		</footer>
-    
+
 	</div>
 	)
 }
@@ -43,7 +37,7 @@ export async function getStaticProps() {
 	  },
 	}
   }
-export default Blog
+export default Home
 
 
 
